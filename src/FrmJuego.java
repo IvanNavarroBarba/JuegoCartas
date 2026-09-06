@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,6 +37,33 @@ public class FrmJuego extends JFrame {
         pnlJugador2 = new JPanel();
         pnlJugador2.setBackground(new Color(12, 208, 234));
         tpJugadores.add("Raúl Vidal", pnlJugador2);
+
+        //eventos
+        btnRepartir.addActionListener(evento -> {
+            repartir();
+        });
+
+        btnVerificar.addActionListener(evento -> {
+            verificar();
+        });
+
+        
+    }
+
+    private Jugador jugador1 = new Jugador();
+    private Jugador jugador2 = new Jugador();
+
+     private void repartir() {
+
+        jugador1.repartir();
+        jugador1.mostrar(pnlJugador1);
+
+        jugador2.repartir();
+        jugador2.mostrar(pnlJugador2);        
+    }
+
+    private void verificar() {
+
     }
 
 }
