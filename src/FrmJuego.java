@@ -3,12 +3,14 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 public class FrmJuego extends JFrame {
     
     JPanel pnlJugador1, pnlJugador2;
+    private JTabbedPane tpJugadores;
 
     public FrmJuego(){
         setSize(500, 300);
@@ -63,7 +65,20 @@ public class FrmJuego extends JFrame {
     }
 
     private void verificar() {
+        String mensaje = "";
+        switch (tpJugadores.getSelectedIndex()) {
+            case 0:
+                mensaje = jugador1.getGrupos();
+                break;
+            case 1:
+                mensaje = jugador2.getGrupos();
+                break;
+        }
+        if (!mensaje.isEmpty()) {
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+    }
 
     }
 
-}
+
