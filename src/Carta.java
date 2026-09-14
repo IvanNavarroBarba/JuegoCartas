@@ -35,7 +35,12 @@ public class Carta {
 
     }
 
+    
     // Getters
+    public int getIndice() {
+    return indice;
+    }
+    
     public Pinta getPinta() {
         if (indice <= 13) {
             return Pinta.TREBOL;
